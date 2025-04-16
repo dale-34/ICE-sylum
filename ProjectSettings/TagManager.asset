@@ -6,6 +6,8 @@ TagManager:
   tags:
   - light
   - GeneratorManager
+  - Asylum
+  - Ground
   layers:
   - Default
   - TransparentFX
