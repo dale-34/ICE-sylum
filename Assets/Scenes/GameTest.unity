@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 181029685}
   - component: {fileID: 181029684}
   - component: {fileID: 181029683}
+  - component: {fileID: 181029687}
   m_Layer: 0
   m_Name: cone
   m_TagString: Untagged
@@ -229,6 +230,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &181029687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181029682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82859d7f95226461cb8a6af577687317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &220852067
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,6 +678,7 @@ GameObject:
   - component: {fileID: 1294446824}
   - component: {fileID: 1294446823}
   - component: {fileID: 1294446822}
+  - component: {fileID: 1294446826}
   m_Layer: 0
   m_Name: trash
   m_TagString: Untagged
@@ -760,6 +774,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1294446826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294446821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a78f94ab7424e4d836fb0e9b2c68bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1534083927
 GameObject:
   m_ObjectHideFlags: 0

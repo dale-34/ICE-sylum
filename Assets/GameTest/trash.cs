@@ -5,7 +5,7 @@ using UnityEngine;
 public class trash : MonoBehaviour
 {
 
-    GameObject icecreams;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -16,11 +16,18 @@ public class trash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        icecreams = GameObject.FindGameObjectWithTag("IceCream");
+        
     }
 
-    private void OnMouseDown()
+    void OnMouseDown()
     {
-        Destroy(icecreams);
+        
+        {
+            GameObject[] orders = GameObject.FindGameObjectsWithTag("IceCream");
+            foreach (GameObject IceCream in orders)
+                GameObject.Destroy(IceCream);
+
+            gameFlow.coneValue = 0;
+        }
     }
 }

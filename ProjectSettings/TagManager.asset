@@ -7,7 +7,7 @@ TagManager:
   - light
   - GeneratorManager
   - Asylum
-  - Ground
+  - IceCream
   layers:
   - Default
   - TransparentFX
