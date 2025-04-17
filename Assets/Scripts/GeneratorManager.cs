@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class GeneratorManager : MonoBehaviour
 {
@@ -9,8 +11,17 @@ public class GeneratorManager : MonoBehaviour
 
     // generators
     public GameObject gen_1;
+    public Image gen_1_image;
+
     public GameObject gen_2;
+    public Image gen_2_image;
+
     public GameObject gen_3;
+    public Image gen_3_image;
+
+    public AudioSource audioSource;
+    public Text genFailText;
+
 
     // lights
     public GameObject[] lights;
@@ -28,6 +39,9 @@ public class GeneratorManager : MonoBehaviour
             {
                 light.color = Color.white;
             }
+            gen_1_image.color = Color.green;
+            gen_2_image.color = Color.green;
+            gen_3_image.color = Color.green;
         }
     }
 
@@ -45,15 +59,22 @@ public class GeneratorManager : MonoBehaviour
 
     public void RestoreGenerator()
     {
+        genFailText.text = "";
         genFailed = false;
         genSet = false;
         currGenID = 0;
+        audioSource.Stop();
         ResetLights();
     }
 
     void Start()
     {
         lights = GameObject.FindGameObjectsWithTag("light");
+        gen_1_image.color = Color.green;
+        gen_2_image.color = Color.green;
+        gen_3_image.color = Color.green;
+
+        genFailText.text = "";
     }
 
     void Update()
@@ -62,19 +83,25 @@ public class GeneratorManager : MonoBehaviour
         {
             if (!genSet)
             {
-                currGenID = Random.Range(1, 4);
+                audioSource.Play();
+                //currGenID = Random.Range(1, 4);
+                currGenID = 1;
+                genFailText.text = "A generator has failed! \r\nYou must manually restart it!";
 
                 if (currGenID == 1)
                 {
                     currGen = gen_1;
+                    gen_1_image.color = Color.red;
                 }
                 else if (currGenID == 2)
                 {
                     currGen = gen_2;
+                    gen_2_image.color = Color.red;
                 }
                 else if (currGenID == 3)
                 {
                     currGen = gen_3;
+                    gen_3_image.color = Color.red;
                 }
 
                 Generator currGenScript = currGen.GetComponent<Generator>();
