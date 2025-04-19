@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Dalena GameScene.unity
+    guid: 2ef92700fc5c548d892293f8b1ee44bc
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 78b737c1dc5fd4231bb7a3077d52624b, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: f20ce6d16eae140568abe66d71eaa70d, type: 2}
