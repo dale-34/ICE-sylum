@@ -10,13 +10,15 @@ public class IceCreamScoop : MonoBehaviour
         {
             collision.transform.SetParent(scoopAttachPoint);
             collision.transform.localPosition = Vector3.zero;
+            collision.transform.localRotation = Quaternion.identity; // optional
 
-            // Optional: disable rigidbody so it doesn't fall off
             Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
             if (rb != null)
             {
                 rb.isKinematic = true;
             }
+
+            Debug.Log("Ice cream ball snapped to scoop.");
         }
     }
 }

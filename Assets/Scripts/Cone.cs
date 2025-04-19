@@ -18,6 +18,8 @@ public class Cone : MonoBehaviour
             ball.localPosition = Vector3.zero;
             ball.localRotation = Quaternion.Euler(0, 180, 0);
 
+            
+
             // Optional: Disable collider / physics
             Rigidbody rb = ball.GetComponent<Rigidbody>();
             if (rb != null)
