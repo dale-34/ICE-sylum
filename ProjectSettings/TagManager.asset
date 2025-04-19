@@ -8,6 +8,8 @@ TagManager:
   - GeneratorManager
   - IceCreamScoop
   - IceCreamBall
+  - BlueContainer
+  - PinkContainer
   layers:
   - Default
   - TransparentFX

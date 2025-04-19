@@ -3,22 +3,34 @@ using UnityEngine;
 public class IceCreamScoop : MonoBehaviour
 {
     public Transform scoopAttachPoint;
+    public GameObject blueIceCreamPrefab;
+    public GameObject pinkIceCreamPrefab;
 
-    private void OnCollisionEnter(Collision collision)
+    private GameObject currentIceCream; // so only one is on the scoop at a time
+
+    private void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.CompareTag("IceCreamBall"))
+        if (collider.gameObject.CompareTag("BlueContainer"))
         {
-            collision.transform.SetParent(scoopAttachPoint);
-            collision.transform.localPosition = Vector3.zero;
-            collision.transform.localRotation = Quaternion.identity; // optional
-
-            Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.isKinematic = true;
-            }
-
-            Debug.Log("Ice cream ball snapped to scoop.");
+            AttachNewIceCream(blueIceCreamPrefab);
         }
+        else if (collider.gameObject.CompareTag("PinkContainer"))
+        {
+            AttachNewIceCream(pinkIceCreamPrefab);
+        }
+    }
+
+    private void AttachNewIceCream(GameObject prefab)
+    {
+        // Remove current one if it exists
+        if (currentIceCream != null)
+        {
+            Destroy(currentIceCream);
+        }
+
+        // Spawn and attach new one
+        currentIceCream = Instantiate(prefab, scoopAttachPoint);
+        currentIceCream.transform.localPosition = Vector3.zero;
+        currentIceCream.transform.localRotation = Quaternion.identity;
     }
 }
