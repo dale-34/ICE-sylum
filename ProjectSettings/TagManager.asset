@@ -6,6 +6,10 @@ TagManager:
   tags:
   - light
   - GeneratorManager
+  - IceCreamScoop
+  - IceCreamBall
+  - BlueContainer
+  - PinkContainer
   layers:
   - Default
   - TransparentFX
