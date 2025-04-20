@@ -19,6 +19,9 @@ public class GeneratorManager : MonoBehaviour
     public GameObject gen_3;
     public Image gen_3_image;
 
+    public int[] failOrder;
+    int failIndex = 0;
+
     public AudioSource audioSource;
     public Text genFailText;
 
@@ -84,8 +87,22 @@ public class GeneratorManager : MonoBehaviour
             if (!genSet)
             {
                 audioSource.Play();
-                //currGenID = Random.Range(1, 4);
-                currGenID = 1;
+
+                // randomly generated generator - currGenID = Random.Range(1, 4);
+
+                currGenID = failOrder[failIndex];
+                if (failIndex + 1 == failOrder.Length)
+                {
+                    failIndex = 0;
+                }
+                else
+                {
+                    failIndex++;
+                }
+
+                
+
+
                 genFailText.text = "A generator has failed! \r\nYou must manually restart it!";
 
                 if (currGenID == 1)
