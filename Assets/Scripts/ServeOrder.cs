@@ -8,8 +8,16 @@ public class ServeOrder : MonoBehaviour
     {
         if (Cone.currentOrderInt == LoadOrder.targetOrderInt)
         {
-            LoadOrder.index++;
             LoadOrder.orderFinished = true;
+            if (LoadOrder.index == 1)
+            {
+                GeneratorManager.genFailed = true;
+            }
+            else if (LoadOrder.index == 3)
+            {
+                GeneratorManager.genFailed = true;
+            }
+            LoadOrder.index++;
             Debug.Log("ORDER FINISHED AND CORRECT");
         }
         if (collide.CompareTag("Cone"))

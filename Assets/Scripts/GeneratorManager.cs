@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class GeneratorManager : MonoBehaviour
 {
-    public bool genFailed = false;
-    public bool genSet = false;
+    public static bool genFailed = false;
+    private bool genSet = false;
 
     // generators
     public GameObject gen_1;
