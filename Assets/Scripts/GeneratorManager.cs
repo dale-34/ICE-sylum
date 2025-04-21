@@ -84,6 +84,7 @@ public class GeneratorManager : MonoBehaviour
     {
         if (genFailed)
         {
+
             if (!genSet)
             {
                 audioSource.Play();

@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Generator : MonoBehaviour
+public class TurnGeneratorOnWithButton : MonoBehaviour
 {
-    public bool genOn = true;
-    public bool turnGenOn = false;
+    public GameObject generator;
     private GeneratorManager generatorManager;
-    public int id = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -18,28 +16,17 @@ public class Generator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (turnGenOn)
-        {
-            TurnGeneratorOn();
-        }
         
-    }
-
-    void TurnGeneratorOn()
-    {
-        if (generatorManager.currGenID == id)
-        {
-            genOn = true;
-            generatorManager.RestoreGenerator();
-            turnGenOn = false;
-        }
     }
 
     void OnTriggerEnter(Collider collider)
     {
         if (collider.tag == "Player")
         {
-            TurnGeneratorOn();
+            Generator generatorComponent = generator.GetComponent<Generator>();
+            generatorComponent.genOn = true;
+            generatorManager.RestoreGenerator();
         }
     }
+
 }
