@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class npcMovement : MonoBehaviour
 {
-    public GameObject spawn;
+    private GameObject spawn;
     private Transform spawnPoint;
     public GameObject newOrder;
     public GameObject location;
@@ -15,9 +16,8 @@ public class npcMovement : MonoBehaviour
     void Start()
     {
         playerTransform = location.transform;
-        spawnPoint = spawn.transform;
+        spawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform;
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        StartCoroutine(Destroy());
     }
 
     // Update is called once per frame
@@ -26,10 +26,31 @@ public class npcMovement : MonoBehaviour
         nav.destination = playerTransform.position;
     }
 
+    void OnTriggerEnter(Collider myCollider)
+    {
+        if (myCollider.gameObject.tag == "Player")
+        {
+            ChangeTarget(spawnPoint.position);
+            Instantiate(newOrder, spawnPoint.position, Quaternion.identity);
+            StartCoroutine(Destroy());
+        }
+        
+    }
+
     IEnumerator Destroy()
     {
-        yield return new WaitForSeconds(30f);
-        Instantiate(newOrder, spawnPoint.position, Quaternion.identity);
+        yield return new WaitForSeconds(10f);
         Destroy(gameObject);
     }
+
+    public void ChangeTarget(Vector3 backToSpawn)
+    {
+        if (nav.hasPath)
+        {
+            nav.ResetPath();
+        }
+
+        nav.SetDestination(backToSpawn);
+    }
+
 }
