@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5462113143151856849}
   m_Layer: 0
   m_Name: Object_2
-  m_TagString: IceCreamBall
+  m_TagString: Blue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,12 +99,12 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.27109686
-  m_Center: {x: 0.19035125, y: -0.012925237, z: 1.103903}
+  m_Radius: 0.28361312
+  m_Center: {x: 0.19035125, y: -0.012925237, z: 1.0913868}
 --- !u!1 &3820347954262473178
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 7628435841374698988}
   m_Layer: 0
   m_Name: Ice Cream Ball.obj.cleaner.materialmerger.gles
-  m_TagString: IceCreamBall
+  m_TagString: Blue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

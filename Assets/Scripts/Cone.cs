@@ -10,7 +10,7 @@ public class Cone : MonoBehaviour
 
     // Blue : 1, Choc : 10, Strawberry: 100
     private void OnTriggerEnter(Collider other)
-    {
+    {   
         if (other.CompareTag("Blue") || other.CompareTag("Choc") ||  other.CompareTag("Strawberry"))
         {
             Transform ball = other.transform;
@@ -42,7 +42,6 @@ public class Cone : MonoBehaviour
 
             ball.localPosition = Vector3.zero;
             ball.localRotation = Quaternion.Euler(0, 180, 0);
-            firstScoop = true;
 
             Rigidbody rb = ball.GetComponent<Rigidbody>();
             if (rb != null)
@@ -54,6 +53,8 @@ public class Cone : MonoBehaviour
 
             Collider col = ball.GetComponent<Collider>();
             if (col != null) col.enabled = false;
+            firstScoop = true;
+
         }
     }
 }

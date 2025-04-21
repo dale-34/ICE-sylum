@@ -10,12 +10,20 @@ public class ServeOrder : MonoBehaviour
         {
             LoadOrder.index++;
             LoadOrder.orderFinished = true;
-            Debug.Log("Correct order!");
+            Debug.Log("ORDER FINISHED AND CORRECT");
         }
-        else if (Cone.currentOrderInt != LoadOrder.targetOrderInt)
+        if (collide.CompareTag("Cone"))
         {
-            Debug.Log("Wrong Order");
+            Destroy(collide.transform.root.gameObject);
         }
+        if (collide.CompareTag("Blue") || collide.CompareTag("Choc") ||  collide.CompareTag("Strawberry"))
+        {
+            Destroy(collide.gameObject);
+        }
+        Debug.Log("CURRENT ORDER INT: ");
+        Debug.Log(Cone.currentOrderInt);
+
+        Cone.currentOrderInt = 0;
     }
             
 }

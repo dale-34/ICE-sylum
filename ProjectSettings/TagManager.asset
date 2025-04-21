@@ -9,11 +9,12 @@ TagManager:
   - IceCreamScoop
   - BlueContainer
   - PinkContainer
-  - Blue
   - Choc
   - Strawberry
   - IceCreamBall
   - BrownContainer
+  - Blue
+  - Cone
   layers:
   - Default
   - TransparentFX

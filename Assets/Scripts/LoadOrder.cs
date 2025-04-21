@@ -14,6 +14,7 @@ public class LoadOrder : MonoBehaviour
     public static int targetOrderInt = 0;
     public static int index = 0;
 
+    private GameObject currOrder;
     public void Start()
     {
         NewOrder();
@@ -23,6 +24,7 @@ public class LoadOrder : MonoBehaviour
     {
         if (orderFinished)
         {
+            Destroy(currOrder);
             NewOrder();
         }
     }
@@ -32,7 +34,7 @@ public class LoadOrder : MonoBehaviour
         orderFinished = false;
         if (index <= orderValues.Length)
         {
-            Instantiate(Orders[index], spawnPoint.position, spawnPoint.rotation);
+            currOrder = Instantiate(Orders[index], spawnPoint.position, spawnPoint.rotation);
             targetOrderInt = orderValues[index]; 
             Debug.Log("Spawning");
         }
