@@ -16901,7 +16901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5efa1f2f2d0470345bccf04d1cea41da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: Beta
+  SceneToLoad: Dalena GameScene
 --- !u!1001 &1545960633
 PrefabInstance:
   m_ObjectHideFlags: 0
