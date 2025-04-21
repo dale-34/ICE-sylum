@@ -18,6 +18,9 @@ public class serveCone : MonoBehaviour
 
     void OnMouseDown()
     {
+        Destroy(gameObject);
+
+        /*
         if (gameFlow.orderValue == gameFlow.coneValue)
         {
             Debug.Log("Correct! Great job");
@@ -37,5 +40,6 @@ public class serveCone : MonoBehaviour
 
             gameFlow.coneValue = 0;
         }
+        */
     }
 }
