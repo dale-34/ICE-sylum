@@ -845,8 +845,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd6ac879df664d8d83e5e4d51ff518b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blue1: {fileID: 913021452915261279, guid: 45ca780d8ad074d53aa07df8c2132e67, type: 3}
+  Orders: []
+  orderValues: 
   spawnPoint: {fileID: 491654984}
+  servePoint: {fileID: 0}
 --- !u!4 &60270633
 Transform:
   m_ObjectHideFlags: 0
@@ -3164,6 +3166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachTo: {fileID: 480624986}
+  attachTo2: {fileID: 0}
 --- !u!135 &255419656
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6049,6 +6052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachTo: {fileID: 1934702736}
+  attachTo2: {fileID: 0}
 --- !u!1 &491654983
 GameObject:
   m_ObjectHideFlags: 0
@@ -10315,6 +10319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachTo: {fileID: 1346449159}
+  attachTo2: {fileID: 0}
 --- !u!135 &856497523
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12129,6 +12134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachTo: {fileID: 228894721}
+  attachTo2: {fileID: 0}
 --- !u!135 &1015075566
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -28987,6 +28993,7 @@ MonoBehaviour:
   scoopAttachPoint: {fileID: 1112068017}
   blueIceCreamPrefab: {fileID: 7176528518509648663, guid: 706f772784b154fc3ac2e4a1b85c8611, type: 3}
   pinkIceCreamPrefab: {fileID: 5727733167297614596, guid: 79c59ac6c6d3541c2ad05f79277a4473, type: 3}
+  brownIceCreamPrefab: {fileID: 0}
 --- !u!114 &2102517990591407104
 MonoBehaviour:
   m_ObjectHideFlags: 0
