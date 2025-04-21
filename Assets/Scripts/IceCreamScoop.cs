@@ -5,6 +5,8 @@ public class IceCreamScoop : MonoBehaviour
     public Transform scoopAttachPoint;
     public GameObject blueIceCreamPrefab;
     public GameObject pinkIceCreamPrefab;
+    public GameObject brownIceCreamPrefab;
+
 
     private GameObject currentIceCream; // so only one is on the scoop at a time
 
@@ -17,6 +19,10 @@ public class IceCreamScoop : MonoBehaviour
         else if (collider.gameObject.CompareTag("PinkContainer"))
         {
             AttachNewIceCream(pinkIceCreamPrefab);
+        }
+        else if (collider.gameObject.CompareTag("BrownContainer"))
+        {
+            AttachNewIceCream(brownIceCreamPrefab);
         }
     }
 

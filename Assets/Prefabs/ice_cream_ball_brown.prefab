@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2219322901332853686}
   m_Layer: 0
   m_Name: Ice Cream Ball.obj.cleaner.materialmerger.gles
-  m_TagString: Strawberry
+  m_TagString: Choc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,8 +43,8 @@ GameObject:
   - component: {fileID: 4536043320049822399}
   - component: {fileID: 8212811252211174938}
   m_Layer: 0
-  m_Name: ice_cream_ball_pink
-  m_TagString: Strawberry
+  m_Name: ice_cream_ball_brown
+  m_TagString: Choc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 4300602194963781036}
   m_Layer: 0
   m_Name: Object_2
-  m_TagString: Strawberry
+  m_TagString: Choc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,7 +154,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 19a4eadde5a684e60a18fcc11568b4ee, type: 2}
+  - {fileID: 2100000, guid: c7800bebf5cca4d91b22457085f34dd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
