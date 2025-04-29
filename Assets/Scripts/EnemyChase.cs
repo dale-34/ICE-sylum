@@ -27,20 +27,22 @@ public class EnemyChase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool isMoving = nav.desiredVelocity.magnitude > 0.1f;
-
-        nav.destination = playerTransform.position;
-
-        
-        if (isMoving)
+        if (LoadOrder.index == 1 && TriggerChase.trigChase)
         {
-            animator.SetBool("isMoving", true);
-        }
+            bool isMoving = nav.desiredVelocity.magnitude > 0.1f;
 
-        if (!isMoving)
-        {
-            animator.SetBool("isMoving", false);
+            nav.destination = playerTransform.position;
+
+            
+            if (isMoving)
+            {
+                animator.SetBool("isMoving", true);
+            }
+
+            if (!isMoving)
+            {
+                animator.SetBool("isMoving", false);
+            }
         }
-        
     }
 }
