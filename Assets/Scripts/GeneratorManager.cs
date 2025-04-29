@@ -68,6 +68,7 @@ public class GeneratorManager : MonoBehaviour
         currGenID = 0;
         audioSource.Stop();
         ResetLights();
+        TriggerChase.trigChase = false;
     }
 
     void Start()
@@ -100,9 +101,6 @@ public class GeneratorManager : MonoBehaviour
                 {
                     failIndex++;
                 }
-
-                
-
 
                 genFailText.text = "A generator has failed! \r\nYou must manually restart it!";
 

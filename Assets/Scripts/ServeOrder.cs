@@ -9,11 +9,15 @@ public class ServeOrder : MonoBehaviour
         if (Cone.currentOrderInt == LoadOrder.targetOrderInt)
         {
             LoadOrder.orderFinished = true;
-            if (LoadOrder.index == 1)
+            if (LoadOrder.index == 1) // 2nd order
             {
                 GeneratorManager.genFailed = true;
             }
-            else if (LoadOrder.index == 3)
+            else if (LoadOrder.index == 3) // 4th order
+            {
+                GeneratorManager.genFailed = true;
+            }
+            else if (LoadOrder.index == 7) // 8th order
             {
                 GeneratorManager.genFailed = true;
             }
