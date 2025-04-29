@@ -11,15 +11,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Beta.unity
     guid: b0e4ab033f6b57a40b025f6a70eb4266
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 77b0b14353454f442821e5a236460957
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dalena GameScene 1.unity
     guid: 253f85111b371ae42b4110082f10748c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EndScreen.unity
     guid: 4c0ad7cb25c25448cb4a2e24c54662e7
+  - enabled: 1
+    path: Assets/Scenes/DeathScreen.unity
+    guid: 718aa79422f354c198b479323852eaf2
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 78b737c1dc5fd4231bb7a3077d52624b, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: f20ce6d16eae140568abe66d71eaa70d, type: 2}
