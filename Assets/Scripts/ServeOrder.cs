@@ -1,17 +1,9 @@
 using System.Collections;
 using UnityEngine;
-using TMPro;
 using UnityEngine.SceneManagement;
 
 public class ServeOrder : MonoBehaviour
 {
-    public TMP_Text wrongOrder;
-
-    void Start()
-    {
-        wrongOrder.text = "";
-    }
-
     public void OnTriggerEnter(Collider collide)
     {
         if (Cone.currentOrderInt == LoadOrder.targetOrderInt)
@@ -22,17 +14,13 @@ public class ServeOrder : MonoBehaviour
             {
                 GeneratorManager.genFailed = true;
             }
+            
             else if (LoadOrder.index == 8)
             {
-                SceneManager.LoadScene("EndScene");
+                SceneManager.LoadScene("EndScreen");
             }
-
             LoadOrder.index++;
             Debug.Log("ORDER FINISHED AND CORRECT");
-        }
-        else if (collide.CompareTag("Cone") && Cone.currentOrderInt != LoadOrder.targetOrderInt)
-        {
-            StartCoroutine(ShowWrongOrderText());
         }
 
         if (collide.CompareTag("Cone"))
@@ -45,12 +33,5 @@ public class ServeOrder : MonoBehaviour
         }
 
         Cone.currentOrderInt = 0;
-    }
-
-    private IEnumerator ShowWrongOrderText()
-    {
-        wrongOrder.text = "WRONG ORDER";
-        yield return new WaitForSeconds(3f);
-        wrongOrder.text = "";
     }
 }
