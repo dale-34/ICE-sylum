@@ -23,7 +23,7 @@ public class GeneratorManager : MonoBehaviour
     int failIndex = 0;
 
     public AudioSource audioSource;
-    public Text genFailText;
+    // public Text genFailText;
 
 
     // lights
@@ -62,7 +62,7 @@ public class GeneratorManager : MonoBehaviour
 
     public void RestoreGenerator()
     {
-        genFailText.text = "";
+        // genFailText.text = "";
         genFailed = false;
         genSet = false;
         currGenID = 0;
@@ -78,7 +78,7 @@ public class GeneratorManager : MonoBehaviour
         gen_2_image.color = Color.green;
         gen_3_image.color = Color.green;
 
-        genFailText.text = "";
+        // genFailText.text = "";
     }
 
     void Update()
@@ -102,7 +102,7 @@ public class GeneratorManager : MonoBehaviour
                     failIndex++;
                 }
 
-                genFailText.text = "A generator has failed! \r\nYou must manually restart it!";
+                // genFailText.text = "A generator has failed! \r\nYou must manually restart it!";
 
                 if (currGenID == 1)
                 {
