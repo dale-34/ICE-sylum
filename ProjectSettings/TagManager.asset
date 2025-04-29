@@ -6,6 +6,17 @@ TagManager:
   tags:
   - light
   - GeneratorManager
+  - Asylum
+  - IceCream
+  - IceCreamScoop
+  - BlueContainer
+  - PinkContainer
+  - Choc
+  - Strawberry
+  - IceCreamBall
+  - BrownContainer
+  - Blue
+  - Cone
   layers:
   - Default
   - TransparentFX
