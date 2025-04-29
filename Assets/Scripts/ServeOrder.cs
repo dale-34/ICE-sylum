@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class ServeOrder : MonoBehaviour
 {   
     public Text wrongOrder;
@@ -27,10 +29,14 @@ public class ServeOrder : MonoBehaviour
             {
                 GeneratorManager.genFailed = true;
             }
+            else if (LoadOrder.index == 8)
+            {
+                SceneManager.LoadScene("EndScene");
+            }
             LoadOrder.index++;
             Debug.Log("ORDER FINISHED AND CORRECT");
         } 
-        else if (collide.CompareTag("Cone"))
+        else if (collide.CompareTag("Cone") && Cone.currentOrderInt != LoadOrder.targetOrderInt)
         {
             StartCoroutine(ShowWrongOrderText()); 
         }
@@ -42,9 +48,6 @@ public class ServeOrder : MonoBehaviour
         {
             Destroy(collide.gameObject);
         }
-        Debug.Log("CURRENT ORDER INT: ");
-        Debug.Log(Cone.currentOrderInt);
-
         Cone.currentOrderInt = 0;
     }
     
