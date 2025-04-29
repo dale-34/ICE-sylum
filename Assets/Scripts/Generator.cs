@@ -34,4 +34,12 @@ public class Generator : MonoBehaviour
             turnGenOn = false;
         }
     }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.tag == "Player")
+        {
+            TurnGeneratorOn();
+        }
+    }
 }
