@@ -18,6 +18,7 @@ public class EnemyChase : MonoBehaviour
     public float damageRate = 5f; 
     public float attackRange = 2f;
 
+    public Transform spawnPoint;
 
     void Start()
     {
@@ -30,12 +31,17 @@ public class EnemyChase : MonoBehaviour
     void Update()
     {   
         // LoadOrder.index == 1 &&
-        if ( TriggerChase.trigChase)
+        if (TriggerChase.trigChase)
         {
             bool isMoving = nav.desiredVelocity.magnitude > 0.1f;
 
-            nav.destination = playerTransform.position;
-
+            if (PlayerHide.isHiding)
+            {
+                nav.destination = spawnPoint.position;
+            }
+            else
+            {
+                nav.destination = playerTransform.position;
             
             if (isMoving)
             {
@@ -46,11 +52,13 @@ public class EnemyChase : MonoBehaviour
             {
                 animator.SetBool("isMoving", false);
             }
+
              // Check distance to player
             float distance = Vector3.Distance(transform.position, playerTransform.position);
             if (distance < attackRange)
             {
                 healthBar.curr = Mathf.Min(healthBar.curr + damageRate * Time.deltaTime, healthBar.full);
+            }
             }
         }
     }
