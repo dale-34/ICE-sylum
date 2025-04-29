@@ -5,11 +5,12 @@ using UnityEngine;
 public class TriggerChase : MonoBehaviour
 {
     public static bool trigChase = false;
-    void OnTriggerEnter(Collider collider)
+    private void OnTriggerEnter(Collider collider)
     {
         if (collider.CompareTag("Player"))
         {
             trigChase = true;
+            Debug.Log("Chase Triggered");
         }
     }
 }
