@@ -17,7 +17,7 @@ public class EnemyChase : MonoBehaviour
     public HealthBar healthBar;
     public float damageRate = 5f; 
     public float attackRange = 2f;
-
+    public static bool playBreathing = false;
     public Transform spawnPoint;
 
     void Start()
@@ -37,29 +37,40 @@ public class EnemyChase : MonoBehaviour
 
             if (PlayerHide.isHiding)
             {
+                playBreathing = true;
                 nav.destination = spawnPoint.position;
             }
             else
             {
+                playBreathing = false;
                 nav.destination = playerTransform.position;
             
-            if (isMoving)
-            {
-                animator.SetBool("isMoving", true);
-            }
+                if (isMoving)
+                {
+                    animator.SetBool("isMoving", true);
+                }
 
-            if (!isMoving)
-            {
-                animator.SetBool("isMoving", false);
-            }
+                if (!isMoving)
+                {
+                    animator.SetBool("isMoving", false);
+                }
 
-             // Check distance to player
-            float distance = Vector3.Distance(transform.position, playerTransform.position);
-            if (distance < attackRange)
-            {
-                healthBar.curr = Mathf.Min(healthBar.curr + damageRate * Time.deltaTime, healthBar.full);
+                // Check distance to player
+                float distance = Vector3.Distance(transform.position, playerTransform.position);
+                if (distance < attackRange)
+                {
+                    healthBar.curr = Mathf.Min(healthBar.curr + damageRate * Time.deltaTime, healthBar.full);
+                    playBreathing = true;
+                }
+                else 
+                {
+                    playBreathing = false;
+                }
             }
-            }
+        }
+        else
+        {
+            playBreathing = false;
         }
     }
 }
