@@ -21,6 +21,8 @@ public class EnemyChase : MonoBehaviour
     public static bool playBreathing = false;
     public Transform spawnPoint;
 
+    public AudioSource giggle;
+
     void Start()
     {
         playerTransform = player.transform;
@@ -66,10 +68,12 @@ public class EnemyChase : MonoBehaviour
                 if (distance < attackRange)
                 {
                     healthBar.curr = Mathf.Min(healthBar.curr + damageRate * Time.deltaTime, healthBar.full);
+                    giggle.Play();
                     playBreathing = true;
                 }
                 else 
                 {
+                    giggle.Stop();
                     playBreathing = false;
                 }
             }
