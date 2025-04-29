@@ -9,8 +9,6 @@ public class ServeOrder : MonoBehaviour
     void Start()
     {
         wrongOrder.text = "";
-        GeneratorManager.genFailed = true;
-
     }
     public void OnTriggerEnter(Collider collide)
     {
