@@ -34,7 +34,8 @@ public class EnemyChase : MonoBehaviour
     void Update()
     {   
         bool isMoving = nav.desiredVelocity.magnitude > 0.1f;
-        if (TriggerChase.trigChase && (LoadOrder.index == 3 || LoadOrder.index == 7))
+        if (TriggerChase.trigChase && (LoadOrder.index == 2 || LoadOrder.index == 7))
+        // if (TriggerChase.trigChase)
         {
 
             if (PlayerHide.isHiding)

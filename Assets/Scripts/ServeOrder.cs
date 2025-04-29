@@ -1,9 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class ServeOrder : MonoBehaviour
-{
+{   
+    public Text wrongOrder;
+
+    void Start()
+    {
+        wrongOrder.text = "";
+        GeneratorManager.genFailed = true;
+
+    }
     public void OnTriggerEnter(Collider collide)
     {
         if (Cone.currentOrderInt == LoadOrder.targetOrderInt)
@@ -23,6 +31,10 @@ public class ServeOrder : MonoBehaviour
             }
             LoadOrder.index++;
             Debug.Log("ORDER FINISHED AND CORRECT");
+        } 
+        else if (collide.CompareTag("Cone"))
+        {
+            StartCoroutine(ShowWrongOrderText()); 
         }
         if (collide.CompareTag("Cone"))
         {
@@ -37,5 +49,11 @@ public class ServeOrder : MonoBehaviour
 
         Cone.currentOrderInt = 0;
     }
-            
+    
+    private IEnumerator ShowWrongOrderText()
+    {
+        wrongOrder.text = "WRONG ORDER";
+        yield return new WaitForSeconds(3f); 
+        wrongOrder.text = "";
+    }
 }
